@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title></title>
+    <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+
+        .in{
+            width:200px;
+            height:250px;
+            display: inline-block;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .box{
+            width: 1100px;
+            /*height: 2000px;*/
+            margin-left: 100px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        table{
+            width: 1000px;
+            height: 2000px;
+        }
+    </style>
+</head>
+<script>
+    $(function () {
+        $(".like").click(function(){
+            var read=$(this).val();
+            if(read==0){
+                $(this).val(1);
+            }
+            else{
+                $(this).val(0);
+                $(this).prop("checked",false);
+            }
+        })
+    })
+</script>
+
+<body>
+
+<!--<div class="panel-body">-->
+    <!--<span th:if="${user eq null}"> 您还没有登录，请登陆后再操作<br/></span>-->
+    <!--<span>没有收货地址的提示。。。</span>-->
+<!--</div>-->
+<!--<input id="customer" th:type="hidden" th:text="${customer}">-->
+
+<div class="box">
+    <th:block th:each="c:${collect_list}">
+                <div class="in" th:if="${c.pizza != null}">
+                    <img th:src="${c.pizza.pizza_img}">
+                    <p th:text="${c.pizza.pizza_name}+'&nbsp; &nbsp; '+${c.pizza.pizza_size}"></p>
+                    <p th:text="${c.pizza.pizza_price}+'元/份'"></p>
+                    <input class="btn btn-primary btn-block" type="submit" name="order" th:value="点餐">
+                    &nbsp; <input type="radio" class="like" th:value="0">收藏
+                </div>
+                <div class="line" th:if="${c.drink != null}">
+                <img th:src="${c.drink.drink_img}">
+                <p th:text="${c.drink.drink_name}"></p>
+                <p th:text="${c.drink.drink_price}+'元/份'"></p>
+                <input class="btn btn-primary btn-block" type="submit" name="order" th:value="点餐">
+                &nbsp; <input type="radio"  class="like" th:value="0">收藏
+            </div>
+
+                <div class="line" th:if="${c.snack != null}">
+                    <img th:src="${c.snack.snack_img}">
+                    <p th:text="${c.snack.snack_name}"></p>
+                    <p th:text="${c.snack.snack_price}+'元/份'"></p>
+                    <input class="btn btn-primary btn-block" type="submit" name="order" th:value="点餐">
+                    &nbsp; <input type="radio"  class="like" th:value="0">收藏
+                </div>
+                <div class="line" th:if="${c.setMeal != null}">
+                    <img th:src="${c.setMeal.set_meal_img}">
+                    <p th:text="${c.setMeal.set_meal_name}"></p>
+                    <p th:text="${c.setMeal.set_meal_price}+'元/份'"></p>
+                    <input class="btn btn-primary btn-block" type="submit" name="order" th:value="点餐">
+                    &nbsp; <input type="radio"  class="like" th:value="0">收藏
+                </div>
+    </th:block>
+</div>
+
+
+</body>
+</html>

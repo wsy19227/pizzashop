@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>魔法食界披萨连锁店</title>
+    <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        body{
+            width: 800px;
+            margin-left:auto;
+            margin-right:auto;
+            background-color:whitesmoke;
+        }
+        p{
+            text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/
+        }
+    </style>
+</head>
+<body>
+<h3>会员服务协议</h3>
+<p>
+    您好，欢迎注册魔法食界会员！
+</p>
+<p>
+   本《会员服务协议》（以下简称本协议）将有助于您了解魔法食界披萨连锁企业为您提供的麦当劳会员服务，您在注册和使用魔法食界会员服务时
+    的权利和义务，以及您在使用魔法食界为您提供的网站时应遵守的条款和条件。请您务必仔细阅读本协议。
+</p>
+<p>
+    您在通过魔法食界官方平台注册魔法食界账号前，应确保您已年满十八（18）周岁。如果您未满十八（18）周岁，则您在注册前应当在您父母或监护人的陪同下审阅本协议，以确保他们理解该条款。如果您的方面或监护人不认可或不同意本协议条款的，则您应当立即停止注册并停止使用服务。
+</p>
+<p>
+    如您对本协议条款有任何疑问，您可以致电魔法食界客服热线：0746-3842107（工作时间为每天9：00-18：00）。您也可以通过电子邮箱1523223372@qq.com与我们取得联系。
+</p>
+<h4>一.魔法食界会员账号的注册</h4>
+<p>
+    在魔法食界官方平台注册后，您即表示同意并授权魔法食界使用您提交的注册信息，同时为您在上述平台开通魔法食界会员账号，以使您立即或未来可使用您的魔法食界会员账号登录名及密码直接登录上述平台，而无需再次注册。
+</p>
+<p>
+    您作为魔法食界会员在平台上的一切行为必须遵守法律法规及公序良俗，且不会侵害任何第三方的合法权益。否则，魔法食界将有权调整，限制或取消您的会员使用功能或会员权益。
+</p>
+
+<h4>二.积分规则说明</h4>
+<h5>(1)积分规则</h5>
+<p>
+    您在魔法食界官方平台进行消费，正价商品1元积1分，折扣，特价商品2元积1分。
+</p>
+<h5>(2)积分用途</h5>
+<p>
+    累计到特定数量的积分后，您可以在魔法食界官方平台兑换指定优惠券，或者兑换相关商品。
+</p>
+<h5>(3)积分说明</h5>
+<p>
+    积分不具有现金价值，不得转让或赠送。该积分不支持兑换或折换现金，仅可按照本协议约定的方式使用。如果因各种原因导致可累积积分的购买行为未成功，如取消订单等情形，我们将撤销您账号内因为此次购买而相应赠送的积分。
+</p>
+<p>
+    积分一经兑换，不可退还。
+</p>
+<h4>三.账号注销</h4>
+<p>
+    您仅能申请注销您本人的魔法食界会员账号。账号一旦注销，您将无法使用任何会员服务，同时账号内的任何积分或卡券均即刻作废，您的账号信息，交易记录等将无法向您提供。
+</p>
+
+<input th:type="radio" id="read" th:value="0">阅读并同意会员服务条款
+<button th:type="submit" th:disabled="true" id="btn">普通用户升级会员</button>
+<button th:type="submit" th:disabled="true" id="btn1">注册会员</button>
+</body>
+<script>
+    $(function()
+    {
+        $("#read").click(function(){
+            var read=$(this).val();
+            if(read==0){
+                $(this).val(1);
+                $("#btn").prop("disabled",false);
+                $("#btn1").prop("disabled",false);
+            }
+            else{
+                $(this).val(0);
+                $(this).prop("checked",false);
+                $("#btn").prop("disabled",true);
+                $("#btn1").prop("disabled",true);
+            }
+        })
+        $("#btn").click(function(){
+            $(window).attr('location',"/membership/show_to_member.do");
+        })
+        $("#btn1").click(function(){
+            $(window).attr('location',"/membership/show_register_member.do");
+        })
+    })
+</script>
+</html>

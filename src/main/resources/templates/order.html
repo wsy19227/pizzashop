@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- layer -->
+    <script type="text/javascript" src="../layer/layer.js"></script>
+    <!-- common.js -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<form name="registerForm" id="registerForm" method="post" action="/membership/register_member.do"  style="width:60%; margin:0 auto">
+
+    <h2 style="text-align:center; margin-bottom: 20px">会员注册</h2>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请输入您的账号</label>
+            <div class="col-md-5">
+                <input id="customerAccount" name = "customerAccount" class="form-control" type="text" placeholder="账号" required="true" />
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请输入您的姓名</label>
+            <div class="col-md-5">
+                <input id="customerName" name = "customerName" class="form-control" type="text" placeholder="姓名" required="true" />
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请输入您的登录密码</label>
+            <div class="col-md-5">
+                <input id="customerPwd" name = "customerPwd" class="form-control" type="password" placeholder="密码" required="true" />
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请输入您的年龄</label>
+            <div class="col-md-5">
+                <input id="memberAge" name="memberAge" class="form-control" type="text"  placeholder="年龄" required="true" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请选择您的性别</label>
+            <div class="col-md-5">
+                <input name="memberSex" class="form-control" type="radio" th:value="男">男
+                <input name="memberSex" class="form-control" type="radio" th:value="女">女
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请选择您的联系方式</label>
+            <div class="col-md-5">
+                <input id="customerTelephone" name="customerTelephone" class="form-control" type="text"  placeholder="联系方式" required="true" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请选择您的收货地址</label>
+            <div class="col-md-5">
+                <input id="customerAddress" name="customerAddress" class="form-control" type="text"  placeholder="收货地址" required="true" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <button class="btn btn-primary btn-block" type="reset" onclick="reset()">重置</button>
+        </div>
+        <div class="col-md-5">
+            <!--<button class="btn btn-primary btn-block" type="submit" id="reg_btn">注册</button>-->
+            <input class="btn btn-primary btn-block" type="submit" th:value="注册">
+        </div>
+    </div>
+</form>
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$("#reg_btn").click(function () {-->
+            <!--$.ajax({-->
+                <!--url:"/membership/register_member.do",-->
+                <!--type:"POST",-->
+                <!--data:{-->
+                    <!--customerAccount:$("#account").val(),-->
+                    <!--customerName:$("#name").val(),-->
+                    <!--customerPwd:$("#password").val(),-->
+                    <!--customerTelephone:$("#tele").val(),-->
+                    <!--customerAddress:$("#addr").val(),-->
+                    <!--memberAge:$("#age").val(),-->
+                    <!--memberSex:$("input[name='sex']:checked").val()-->
+                <!--},-->
+                <!--success:function(data) {-->
+                    <!--alert(data);-->
+                <!--},-->
+                <!--error:function(data){-->
+                    <!--console.log(data);-->
+                <!--}-->
+            <!--})-->
+        <!--})-->
+    <!--})-->
+<!--</script>-->
+</body>
+</html>

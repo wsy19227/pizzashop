@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+    <script type="text/javascript" th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- layer -->
+    <script type="text/javascript" th:src="@{/layer/layer.js}"></script>
+    <!-- common.js -->
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+
+    <h2 style="text-align:center; margin-bottom: 20px">恭喜您成为魔法食界会员！</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading" th:align="center">会员信息</div>
+        <table class="table" id="goodslist" th:width="100">
+            <tr>
+                <td>账号</td>
+                <td colspan="3" th:text="${customer.customer_account}"></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td colspan="3" th:text="${customer.customer_name}"></td>
+            </tr>
+            <tr>
+                <td>年龄</td>
+                <td colspan="3" th:text="${member.member_age}"></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td colspan="3" th:text="${member.member_sex}"></td>
+            </tr>
+            <tr>
+                <td>积分</td>
+                <td colspan="3" th:text="${member.member_integral}"></td>
+            </tr>
+            <tr>
+                <td>联系方式</td>
+                <td colspan="2" th:text="${customer.customer_telephone}"></td>
+            </tr>
+            <tr>
+                <td>收货地址</td>
+                <td colspan="2" th:text="${customer.customer_address}"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

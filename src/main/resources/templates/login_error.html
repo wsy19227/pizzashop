@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+请先登录系统！
+<p th:text="${session.customer.customer_name}"></p>
+<p th:if="${session.customer eq null}">未登录</p>
+<p th:if="${session.customer != null}">已登录</p>
+</body>
+</html>
+<!--
+
+
+-->

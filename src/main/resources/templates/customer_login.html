@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- layer -->
+    <script type="text/javascript" src="../layer/layer.js"></script>
+    <!-- common.js -->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<form name="registerForm" id="registerForm" method="post" action="/customer/login.do"  style="width:60%; margin:0 auto">
+
+
+
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请输入账号</label>
+            <div class="col-md-5">
+                <input id="account" name = "account" class="form-control" type="text" placeholder="账号" required="true" />
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <label class="form-label col-md-4">请输入密码</label>
+            <div class="col-md-5">
+                <input id="pwd" name = "pwd" class="form-control" type="password" placeholder="密码" required="true" />
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-5">
+            <button class="btn btn-primary btn-block" type="reset" onclick="reset()">重置</button>
+        </div>
+        <div class="col-md-5">
+            <!--<button class="btn btn-primary btn-block" type="submit" id="reg_btn">注册</button>-->
+            <input class="btn btn-primary btn-block" type="submit" th:value="登录">
+        </div>
+    </div>
+</form>
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$("#reg_btn").click(function () {-->
+            <!--$.ajax({-->
+                <!--url:"/membership/register_member.do",-->
+                <!--type:"POST",-->
+                <!--data:{-->
+                    <!--customerAccount:$("#account").val(),-->
+                    <!--customerName:$("#name").val(),-->
+                    <!--customerPwd:$("#password").val(),-->
+                    <!--customerTelephone:$("#tele").val(),-->
+                    <!--customerAddress:$("#addr").val(),-->
+                    <!--memberAge:$("#age").val(),-->
+                    <!--memberSex:$("input[name='sex']:checked").val()-->
+                <!--},-->
+                <!--success:function(data) {-->
+                    <!--alert(data);-->
+                <!--},-->
+                <!--error:function(data){-->
+                    <!--console.log(data);-->
+                <!--}-->
+            <!--})-->
+        <!--})-->
+    <!--})-->
+<!--</script>-->
+</body>
+</html>
